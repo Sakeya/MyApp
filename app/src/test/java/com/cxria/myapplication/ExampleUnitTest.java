@@ -13,11 +13,13 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
+    @Test
     public void testadd() throws Exception{
         int res = Utils.instance().add(5, 6);
         assertEquals(9, res);
     }
 
+    @Test
     public void testmore() throws Exception{
         int res = Utils.instance().more(5);
         assertEquals(6, res);
