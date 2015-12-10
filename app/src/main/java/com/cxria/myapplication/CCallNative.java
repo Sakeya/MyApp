@@ -7,5 +7,5 @@ public class CCallNative {
     private static CCallNative mNative = new CCallNative();
     public static CCallNative instance(){return mNative;}
 
-    public native void hello();
+    public native boolean hello();
 }

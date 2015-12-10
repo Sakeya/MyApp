@@ -12,7 +12,7 @@ extern "C" {
  * Method:    hello
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_cxria_myapplication_CCallNative_hello
+JNIEXPORT jboolean JNICALL Java_com_cxria_myapplication_CCallNative_hello
   (JNIEnv *, jobject);
 
 #ifdef __cplusplus
