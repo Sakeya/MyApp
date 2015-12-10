@@ -18,4 +18,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         int res = Utils.instance().more(5);
         assertEquals(6, res);
     }
+    public void testhello() throws Exception{
+        CCallNative.instance().hello();
+    }
 }
