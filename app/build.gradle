@@ -14,7 +14,7 @@ android {
 
     signingConfigs {//签名信息 可以自定义很多
         releaseConfig {
-            storeFile file("cx.jks")
+            storeFile file("../cx.jks")
             storePassword "chengxun@2015"
             keyAlias "chewchew"
             keyPassword "chengxun@2015"

@@ -14,4 +14,8 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         int res = Utils.instance().add(5, 6);
         assertEquals(9, res);
     }
+    public void testmore() throws Exception{
+        int res = Utils.instance().more(5);
+        assertEquals(6, res);
+    }
 }
