@@ -25,8 +25,8 @@ public class ExampleUnitTest {
         assertEquals(6, res);
     }
 
-//    public void testhello() throws Exception{
-//        boolean res = CCallNative.instance().hello();
-//        assertEquals(true, res);
-//    }
+    public void testhello() throws Exception{
+        boolean res = CCallNative.instance().hello();
+        assertEquals(true, res);
+    }
 }
