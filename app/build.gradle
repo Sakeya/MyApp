@@ -18,6 +18,14 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        
+        ndk {
+            moduleName "CallNative" // <-- This is the name of my C++ module!
+            stl "stlport_static"
+            abiFilters "armeabi", "armeabi-v7a"
+            ldLibs "android" ,"z"
+            cFlags "-std=c99"
+        }
     }
 
     signingConfigs {//签名信息 可以自定义很多
