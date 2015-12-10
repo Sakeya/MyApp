@@ -29,6 +29,12 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            jni.srcDirs = ['jni']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
