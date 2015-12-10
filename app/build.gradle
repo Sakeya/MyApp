@@ -11,13 +11,23 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    signingConfigs {//签名信息 可以自定义很多
+        releaseConfig {
+            storeFile file("cx.jks")
+            storePassword "chengxun@2015"
+            keyAlias "chewchew"
+            keyPassword "chengxun@2015"
         }
     }
 
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.releaseConfig
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
     //修改生成的apk名字
     applicationVariants.all{ variant->
         variant.outputs.each { output->
