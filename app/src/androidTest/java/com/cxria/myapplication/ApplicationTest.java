@@ -10,16 +10,4 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
         super(Application.class);
     }
-    public void testadd() throws Exception{
-        int res = Utils.instance().add(5, 6);
-        assertEquals(9, res);
-    }
-    public void testmore() throws Exception{
-        int res = Utils.instance().more(5);
-        assertEquals(6, res);
-    }
-    public void testhello() throws Exception{
-        boolean res = CCallNative.instance().hello();
-        assertEquals(true, res);
-    }
 }

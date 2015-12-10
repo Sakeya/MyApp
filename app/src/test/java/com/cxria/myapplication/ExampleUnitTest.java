@@ -12,4 +12,19 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+    public void testadd() throws Exception{
+        int res = Utils.instance().add(5, 6);
+        assertEquals(9, res);
+    }
+
+    public void testmore() throws Exception{
+        int res = Utils.instance().more(5);
+        assertEquals(6, res);
+    }
+
+    public void testhello() throws Exception{
+        boolean res = CCallNative.instance().hello();
+        assertEquals(true, res);
+    }
 }
