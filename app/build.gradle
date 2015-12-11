@@ -34,13 +34,13 @@ android {
             ldLibs "android", "z"
             cFlags "-std=c99"
         }
-        signingConfig signingConfigs.signConfig
+//        signingConfig signingConfigs.signConfig
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
-//            signingConfig signingConfigs.releaseConfig
+            signingConfig signingConfigs.releaseConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testCoverageEnabled = true
         }
