@@ -1,4 +1,5 @@
 #include "com_cxria_myapplication_CCallNative.h"
+#include <stdio.h>
 
 /*
  * Class:     com_cxria_myapplication_CCallNative
