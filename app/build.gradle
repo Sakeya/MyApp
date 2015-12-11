@@ -35,12 +35,14 @@ android {
             cFlags "-std=c99"
         }
         signingConfig signingConfigs.signConfig
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
 //            signingConfig signingConfigs.releaseConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testCoverageEnabled = true
         }
 
         debug {

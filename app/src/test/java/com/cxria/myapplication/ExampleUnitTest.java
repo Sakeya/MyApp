@@ -16,7 +16,7 @@ public class ExampleUnitTest {
     @Test
     public void testadd() throws Exception{
         int res = Utils.instance().add(5, 6);
-        assertEquals(9, res);
+        assertEquals(11, res);
     }
 
     @Test
