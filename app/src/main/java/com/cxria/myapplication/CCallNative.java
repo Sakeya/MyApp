@@ -7,6 +7,7 @@ public class CCallNative {
     static {
         System.loadLibrary("CallNative");
     }
+
     private static CCallNative mNative = new CCallNative();
     public static CCallNative instance(){return mNative;}
 
