@@ -12,57 +12,67 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
+    signingConfigs {//签名信息 可以自定义很多
+        signConfig {
+            keyAlias 'chewchew'
+            keyPassword 'chengxun@2015'
+            storeFile file('cx.jks')
+            storePassword 'chengxun@2015'
+        }
+    }
+
     defaultConfig {
         applicationId "com.cxria.myapplication"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-
         ndk {
             moduleName "CallNative" // <-- This is the name of my C++ module!
             stl "stlport_static"
             abiFilters "armeabi", "armeabi-v7a"
-            ldLibs "android" ,"z"
+            ldLibs "android", "z"
             cFlags "-std=c99"
         }
+        signingConfig signingConfigs.signConfig
     }
-
-    signingConfigs {//签名信息 可以自定义很多
-        releaseConfig {
-            storeFile file("cx.jks")
-            storePassword "chengxun@2015"
-            keyAlias "chewchew"
-            keyPassword "chengxun@2015"
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
 //            signingConfig signingConfigs.releaseConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            manifestPlaceholders = [appIcon: "icon_launcher_debug"]
+
+            // Enable Jacoco: $ gradle connectedAndroidTest -> /project/module/build/outputs/reports/coverage
+            testCoverageEnabled = true
+        }
     }
     //修改生成的apk名字
-    applicationVariants.all{ variant->
-        variant.outputs.each { output->
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
             def oldFile = output.outputFile
 
-            if(variant.buildType.name.equals('release')){
+            if (variant.buildType.name.equals('release')) {
                 def releaseApkName = 'test-' + variant.versionName + "-" + getDate() + '-final.apk'
                 output.outputFile = new File(oldFile.parent, releaseApkName)
             }
-            if(variant.buildType.name.equals('beta')){
+            if (variant.buildType.name.equals('beta')) {
                 def releaseApkName = 'test-' + variant.versionName + "-" + getDate() + '-beta.apk'
                 output.outputFile = new File(oldFile.parent, releaseApkName)
             }
-            if(variant.buildType.name.equals('debug')){
+            if (variant.buildType.name.equals('debug')) {
                 def releaseApkName = 'test-' + variant.versionName + "-" + getDate() + '-debug.apk'
                 output.outputFile = new File(oldFile.parent, releaseApkName)
 
             }
         }
+    }
+    productFlavors {
     }
 }
 
