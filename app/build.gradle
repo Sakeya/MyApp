@@ -34,24 +34,17 @@ android {
             ldLibs "android", "z"
             cFlags "-std=c99"
         }
-//        signingConfig signingConfigs.signConfig
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" //测试类
     }
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.signConfig
+            signingConfig signingConfigs.signConfig //签名信息
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            testCoverageEnabled = true
         }
-//
+
         debug {
-//            applicationIdSuffix ".debug"
-//            versionNameSuffix "-debug"
-//            manifestPlaceholders = [appIcon: "icon_launcher_debug"]
-//
-//            // Enable Jacoco: $ gradle connectedAndroidTest -> /project/module/build/outputs/reports/coverage
-            testCoverageEnabled = true
+            testCoverageEnabled = true//输出覆盖率报告
         }
     }
     //修改生成的apk名字
