@@ -45,14 +45,14 @@ android {
             testCoverageEnabled = true
         }
 //
-//        debug {
+        debug {
 //            applicationIdSuffix ".debug"
 //            versionNameSuffix "-debug"
 //            manifestPlaceholders = [appIcon: "icon_launcher_debug"]
 //
 //            // Enable Jacoco: $ gradle connectedAndroidTest -> /project/module/build/outputs/reports/coverage
-//            testCoverageEnabled = true
-//        }
+            testCoverageEnabled = true
+        }
     }
     //修改生成的apk名字
     applicationVariants.all { variant ->
