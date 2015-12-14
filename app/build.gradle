@@ -63,11 +63,6 @@ android {
                 def releaseApkName = 'test-' + variant.versionName + "-" + getDate() + '.apk'
                 output.outputFile = new File(oldFile.parent, releaseApkName)
             }
-            if (variant.buildType.name.equals('debug')) {
-                def releaseApkName = 'test-' + variant.versionName + "-" + getDate() + '.apk'
-                output.outputFile = new File(oldFile.parent, releaseApkName)
-
-            }
         }
     }
     productFlavors {
