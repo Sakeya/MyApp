@@ -8,7 +8,7 @@ public class Utils {
     public static Utils instance(){return mUtils;}
 
     public int add(int x, int y){
-        return x + y;
+        return x++ + ++y;
     }
 
     public int more(int x){
